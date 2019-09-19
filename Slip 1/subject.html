@@ -1,0 +1,16 @@
+<div class="container">     
+    <h2>Subject Ingormation</h2>
+        <table ng-controller="subjectController">
+            <tr style="background-color:aqua ">
+                <td>Scode</td>
+                <td>Sname</td>
+                <td>Credits</td>
+            </tr>
+            <tr ng-repeat="s in subject">
+                <td>{{s.scode}}</td>
+                <td>{{s.sname}}</td>
+                <td>{{s.credit}}</td>
+            </tr>
+        </table>
+</div>
+    

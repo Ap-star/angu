@@ -1,0 +1,16 @@
+<!-- Write a Javascript to display current date and digital clock on web page -->
+<html>
+	<body>
+		<p id="date"></p>
+		<p id="time"></p>
+	</body>
+	<script>
+			var d = new Date();
+			document.getElementById("date").innerHTML = "Today's Date : "+ d.getDate() + "-" + d.getMonth() + "-" + d.getFullYear();
+			setInterval(
+			function(){
+				var d = new Date();
+				document.getElementById("time").innerHTML = "Current Time : " + d.getHours()+":"+d.getMinutes()+":"+d.getSeconds();
+			},1000);
+		</script>
+</html>

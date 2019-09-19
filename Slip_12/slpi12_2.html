@@ -1,0 +1,56 @@
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script type="text/javascript" src="slip12_2.js"></script>
+<body>
+<div ng-app="myApp" ng-controller="employeePersonal">
+<form>
+	<table>
+		<tr>
+			<td>Employee No : </td>
+			<td><input type="number" ng-model="eno"></td>
+		</tr>
+		<tr>
+			<td>Employee Name : </td>
+			<td><input type="text" ng-model="ename"></td>
+		</tr>
+		<tr>
+			<td>join year : </td>
+			<td><input type="text" ng-model="jyear"></td>
+		</tr>
+		<tr>
+			<td>Qualification : </td>
+			<td><input type="text" ng-model="eq"></td>
+		</tr>
+		<tr>
+			<td>Salary : </td>
+			<td><input type="number" ng-model="esal"></td>
+		</tr>
+		<tr>
+			<td>Address : </td>
+			<td><input type="text" ng-model="eadd"></td>
+		</tr>
+		<tr>
+			<td><input type="button" ng-click="dispinfo()" value="Display Info"></td>
+			<td><input type="button" ng-click="updateSalary()" value="Update Salary"></td>
+		</tr>
+	</table>
+	
+</form>
+
+
+<div ng-controller="employeePersonal"> 
+	<h1>Employee Info : </h1>
+	<br>
+	<h4>
+	<!--Warning!!!! tabular(<table></table>) format me print karna hai jo isme nahi kiya hai to khud se exam me karne ka. phir exam me mark kate to hamko nahi bolneka-->
+		Employee Name : {{employee.ename}}<br>
+		Experience : {{emp_texp(employee.jyear)}}<br>
+		Qualification :{{employee.eq}}<br>
+		Salary :{{employee.esal}}<br> 
+		Address :{{employee.eadd}}<br> 
+	</h4>
+</div>
+	
+</div>
+</body>
+</html>

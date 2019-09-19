@@ -1,0 +1,56 @@
+<!--Q2. Write a code for creating single page application using AngularJS as mentioned below:
+        a) Define an array of country objects as  (name, population, flag,capital,currencyOfCountry) in controller, 
+		with input format for name as uppercase,population and currencyOfCountry in $ currency.
+       b) Create a HTML page which will accept country population from user and 
+	   will display details of countries in alphabetic order of names of countries for given population, 
+	   with output format for name as lowercase,population and currencyOfCountry in Rs. currency.
+     C)
+	 Create a custom directive to display “Country details” message on page
+-->
+
+<html>
+	<head>
+	<title>Filters</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	</head>
+
+	<div ng-app="myApp"  ng-controller="firstContrl" >
+	<div ng-dis></div>
+	Enter population:<input type="text" ng-model="pop"><br>
+	Details:
+		<table border="1">
+			<tr>
+				<th>Name</th>
+				<th>Population</th>
+				<th>Capital</th>
+				<th>Flag</th>
+				<th>Currency</th>
+			</tr>
+			<tr ng-repeat="c in countries | filter : pop | orderBy:'name' ">
+				<td>{{c.name | uppercase}}</td>
+				<td>{{c.population}}</td>
+				<td>{{c.capital}} </td>
+				<td><img src="{{c.flag}}" height="100" width="100"></td>
+				<td>{{c.currency1 | currency : 'INR' }}</td>
+			</tr>
+		</table>
+				
+			
+	</div>	
+</html>
+
+<script>
+var app=angular.module('myApp',[]);
+app.controller("firstContrl",function($scope,$filter){
+	$scope.countries=[
+	{name:'india',population:1200,flag:'https://www.mapsofindia.com/maps/india/images/flag-wallpapers/india-flag-wallpaper.jpg',capital:'Delhi',currency1:1000},
+	{name:'Pakistan',population:1100,flag:'https://english.cdn.zeenews.com/sites/default/files/2019/02/17/763122-704211-flag.jpg',capital:'Karachi',currency1:100},
+	{name:'Nepal',population:1000,flag:'https://www.bergerpaints.com/imaginecolours/wp-content/uploads/2018/01/Flag-of-Nepal.png',capital:'Kathmandu',currency1:2000}
+	]
+});
+app.directive('ngDis',function(){
+	return{
+		template:"<h3>Country details</h3>"
+	};
+})
+</script>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Fibonacci Using Js</title>
+</head>
+
+<body>
+    <script>
+        var x = "";
+
+        function fib(a, b, no, cnt) {
+            x = x + " " + a.toString() + " ";
+            if (cnt == no) {
+                document.getElementById("ser").innerHTML = x;
+                return 0;
+            } else {
+                return fib(b, a + b, no, cnt + 1);
+            }
+        }
+
+        function ex() {
+            fib(0, 1, parseInt(document.getElementById("num").value), 1)
+        }
+    </script>
+    <div>
+        Enter A number : <input type="number" id="num">
+        <br>
+        <input type="submit" onclick="ex()">
+    </div>
+    <h1 id="ser"></h1>
+</body>
+
+</html>

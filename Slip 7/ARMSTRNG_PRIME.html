@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+<body>
+    <div ng-app="myApp" ng-controller="myCtrl">
+
+        <input type="text" ng-model="var1" size="50" placeholder="Type Number">
+        <button type="button" ng-click="getPrime()">Check Prime</button>
+        <button type="button" ng-click="getArmStrong()">Check ArmStrong</button>
+        <p>{{ans}}
+        </p>
+
+    </div>
+
+    <script>
+        var app = angular.module('myApp', []);
+        app.factory('FactPrime', function() {
+            var factory = {};
+            factory.primeno = function(x) {
+                var i;
+                var flag = 0;
+                var temp = 0;
+                var tem2 = "";
+                for (i = 1; i <= x; i++) {
+                    flag = 0;
+                    temp = i;
+                    for (j = 2; j < temp / 2; j++) {
+                        if (temp % j == 0) {
+                            flag = 1;
+                            break;
+                        }
+                    }
+                    if (flag == 0) {
+                        console.log(temp);
+                        tem2 = tem2 + " " + temp.toString();
+                    }
+                }
+                return "Palindrome No : " + tem2;
+            }
+            factory.armstrongno = function(x) {
+                var j = "";
+                var i = 0;
+                for (i = 1; i <= x; i++) {
+                    var tmp = i;
+                    var len = i.toString().length;
+                    var newNum = 0;
+                    while (tmp > 0) {
+                        var t = tmp % 10;
+                        newNum += Math.pow(t, len);
+                        tmp = Math.trunc(tmp / 10);
+                    }
+                    if (newNum == i) {
+                        j = j + " " + newNum.toString();
+                    }
+                }
+                return j;
+            }
+            return factory;
+        });
+        app.service('NumOp', function(FactPrime) {
+            this.prime = function(x) {
+                return FactPrime.primeno(x);
+            }
+
+            this.armstrong = function(x) {
+                console.log("in");
+                return FactPrime.armstrongno(x);
+            }
+        });
+        app.controller('myCtrl', function($scope, NumOp) {
+            $scope.getPrime = function() {
+                $scope.ans = NumOp.prime($scope.var1);
+            }
+            $scope.getArmStrong = function() {
+                $scope.ans = NumOp.armstrong($scope.var1);
+            }
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script type="text/javascript" src="teacherdetails.js"></script>
+<body>
+<div ng-app="myApp" ng-controller="teacherPersonal">
+<form>
+	<table>
+		<tr>
+			<td>Teacher No : </td>
+			<td><input type="number" ng-model="tno"></td>
+		</tr>
+		<tr>
+			<td>Teacher Name : </td>
+			<td><input type="text" ng-model="tname"></td>
+		</tr>
+		<tr>
+			<td>Experience : </td>
+			<td><input type="number" ng-model="texp"></td>
+		</tr>
+		<tr>
+			<td>Joining date : </td>
+			<td><input type="date" ng-model="tdate"></td>
+		</tr>
+		<tr>
+			<td>Qualification : </td>
+			<td><input type="text" ng-model="tq"></td>
+		</tr>
+		<tr>
+			<td>Salary : </td>
+			<td><input type="number" ng-model="tsal"></td>
+		</tr>
+		<tr>
+			<td>Address : </td>
+			<td><input type="text" ng-model="tadd"></td>
+		</tr>
+		<tr>
+			<td><input type="button" ng-click="dispinfo()" value="Display Info"></td>
+			<td><input type="button" ng-click="updateSalary()" value="Update Salary"></td>
+		</tr>
+		<tr>
+			<td><input type="button" ng-click="totalexp()" value="Total Experience"></td>
+			<td><input type="button" ng-click="updatequ()" value="Update Qualification"></td>
+		</tr>
+	</table>
+</form>
+
+
+<div ng-controller="teacherPersonal"> 
+	<h1>Teacher Info : </h1>
+	<br>
+	<h4>Teacher No : {{teacher.tno}}<br>
+		Teacher Name : {{teacher.tname}}<br>
+		Experience : {{teacher.texp}}<br>
+		Joining date : {{teacher.tdate}}<br>
+		Qualification :{{teacher.tq}}<br>
+		Salary :{{teacher.tsal}}<lbr> 
+		Address :{{teacher.tadd}}<br> 
+	</h4>
+</div>
+	
+</div>
+</body>
+</html>

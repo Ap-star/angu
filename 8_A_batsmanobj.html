@@ -1,0 +1,37 @@
+<!-- write javascript to define a obj batsman with properties bcode, bname, innings, notout, runs(by using obj constructor).
+add following methods to obj:
+batavg:to return batavg=runs/(innings-notout)
+update_record : function to update inning.notout matches and total runs
+displaydata():finction to display all the properties of obj and avg runs of batsman -->
+<html>
+	<head>
+		<script>
+			function batsman(bCode,bName,inning,notout,runs)
+				{
+					this.bcode=bCode;
+					this.bName=bName;
+					this.innings=inning;
+					this.notout=notout;
+					this.runs=runs;
+					this.batavg=function(){
+						if(this.innings==this.notout)
+							return this.runs;
+						return this.runs/(this.innings-this.notout);
+					};
+					this.update_record=function(){
+						this.innings = prompt("Enter updated innings : ");
+						this.notout = prompt("Enter Updated notout : ");
+						this.runs = prompt("Enter Updated Runs : ");
+						document.write("<br><br>Updated Information : <br>"+this.displaydata());
+					};
+					this.displaydata=function(){
+						return "bCode : "+this.bcode+"<br>bName : " +this.bName + "<br>Innings : " +this.innings+
+						"<br>NotOut : " + this.notout + "<br>Runs : " + this.runs + "<br>batAvg : " + this.batavg();
+					};
+				}
+				bat = new batsman("101","abc",6,4,400);
+				document.write(bat.displaydata());
+				bat.update_record();
+		</script>
+	</head>
+</html>

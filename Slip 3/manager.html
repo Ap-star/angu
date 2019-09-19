@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Manager</title>
+</head>
+
+<body>
+    <table border=2>
+        <tr>
+            <th>MID</th>
+            <th>MNAME</th>
+            <th>EXP</th>
+        </tr>
+        <tr ng-repeat="x in manager">
+            <td>{{x.mid}}</td>
+            <td>{{x.mname}}</td>
+            <td>{{x.exp | expfilter}}</td>
+        </tr>
+    </table>
+</body>
+
+</html>

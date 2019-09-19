@@ -1,0 +1,101 @@
+<html>
+<head>
+</head>
+<script>
+	var cnt = 0;
+	function handleChange1(){
+		document.getElementById('script').disabled=true;	
+		document.getElementById('js').disabled=true;
+		document.getElementById('scripting').disabled=true;
+		document.getElementById('javascript').disabled=true;
+		if(document.getElementById('script').checked) {	
+			alert("Ans Is TRUE");
+			cnt=cnt+1;
+		}else {
+			alert("Ans is WRONG");
+		}
+	}
+	function handleChange2(){
+		document.getElementById('1998').disabled=true;	
+		document.getElementById('1967').disabled=true;
+		document.getElementById('1975').disabled=true;
+		document.getElementById('1990').disabled=true;
+		if(document.getElementById('1975').checked) {	
+			alert("Ans Is TRUE");
+			cnt=cnt+1;
+		}else {
+			alert("Ans is WRONG");
+		}
+	}
+	function handleChange3(){
+		document.getElementById('home').disabled=true;	
+		document.getElementById('bookmark').disabled=true;
+		document.getElementById('content').disabled=true;
+		document.getElementById('navigator').disabled=true;
+		if(document.getElementById('home').checked) {	
+			alert("Ans Is TRUE");
+			cnt=cnt+1;
+		}else {
+			alert("Ans is WRONG");
+		}
+	}
+	function handleChange4(){
+		document.getElementById('prnt').disabled=true;	
+		document.getElementById('portbl').disabled=true;
+		document.getElementById('publ').disabled=true;
+		document.getElementById('pblc').disabled=true;
+		if(document.getElementById('portbl').checked) {	
+			alert("Ans Is TRUE");
+			cnt=cnt+1;
+		}else {
+			alert("Ans is WRONG");
+		}
+	}
+	function handleChange5(){
+		document.getElementById('2').disabled=true;	
+		document.getElementById('4').disabled=true;
+		document.getElementById('8').disabled=true;
+		document.getElementById('16').disabled=true;
+		if(document.getElementById('2').checked) {	
+			alert("Ans Is TRUE");
+			cnt=cnt+1;
+		}else {
+			alert("Ans is WRONG");
+		}
+	}
+	function score(){
+		alert("Your Score Is "+cnt);
+	}
+</script>
+<body>
+	<div>
+		<h4>1) Inside which HTML element do we put the JavaScript?</h4>
+		<input type="radio" name="q1" id="js" value="js" onclick="handleChange1();" />js<br>
+		<input type="radio" name="q1" id="scripting" value="scripting" onclick="handleChange1();"/>scripting<br>
+		<input type="radio" name="q1" id="javascript" value="javascript" onclick="handleChange1();" />javascript<br>
+		<input type="radio" name="q1" id="script" value="script" onclick="handleChange1();"/>script<br><br>
+		<h4>2) In which year microsoft company was founded?</h4>
+		<input type="radio" name="q2" id="1998" value="1998"onclick="handleChange2();" />1998<br>
+		<input type="radio" name="q2" id="1967" value="1967" onclick="handleChange2();"/>1967<br>
+		<input type="radio" name="q2" id="1975" value="1975" onclick="handleChange2();"/>1975<br>
+		<input type="radio" name="q2" id="1990" value="1990" onclick="handleChange2();"/>1990<br><br>
+		<h4>3) The main page on website is known as?</h4>
+		<input type="radio" name="q3" id="home" value="home"onclick="handleChange3();" />Home Page<br>
+		<input type="radio" name="q3" id="bookmark" value="bookmark" onclick="handleChange3();"/>Book Mark page<br>
+		<input type="radio" name="q3" id="content" value="content" onclick="handleChange3();"/>Content page<br>
+		<input type="radio" name="q3" id="navigator" value="navigator" onclick="handleChange3();"/>Navigator Page<br><br>
+		<h4>4) What is the full form of PDF?</h4>
+		<input type="radio" name="q4" id="prnt" value="prnt"onclick="handleChange4();" />Printed Document Format<br>
+		<input type="radio" name="q4" id="pblc" value="pblc" onclick="handleChange4();"/>Public Document Format<br>
+		<input type="radio" name="q4" id="portbl" value="portbl" onclick="handleChange4();"/>Portable Document Format<br>
+		<input type="radio" name="q4" id="publ" value="publ" onclick="handleChange4();"/>Published Document Format<br><br>
+		<h4>5) Binary System Uses The Power Of</h4>
+		<input type="radio" name="q5" id="2" value="2"onclick="handleChange5();" />2<br>
+		<input type="radio" name="q5" id="4" value="4" onclick="handleChange5();"/>4<br>
+		<input type="radio" name="q5" id="8" value="8" onclick="handleChange5();"/>8<br>
+		<input type="radio" name="q5" id="16" value="16" onclick="handleChange5();"/>16<br><br>
+	<input type="submit" id="submit" value="SUBMIT" onclick="score()"/>
+	</div>
+</body>
+
+</html>

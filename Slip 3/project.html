@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Project</title>
+</head>
+
+<body>
+    <table border=2>
+        <tr>
+            <th>PID</th>
+            <th>PNAME</th>
+            <th>BUDGET</th>
+            <th>START DATE</th>
+            <th>END DATE</th>
+        </tr>
+        <tr ng-repeat="x in project">
+            <td>{{x.pid}}</td>
+            <td>{{x.pname}}</td>
+            <td>{{x.budget | budgetfilter}}</td>
+            <td>{{x.start_date}}</td>
+            <td>{{x.end_date}}</td>
+        </tr>
+    </table>
+</body>
+
+</html>

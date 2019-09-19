@@ -1,0 +1,23 @@
+<!--
+Q1. Write the JavaScript code to add behavior to the HTML for displaying number of words in a string. 
+The page UI allows the user to type a phrase into a text box. 
+The user can click the "Number of words!" button to display the words in that phrase. 
+Number of words should be displayed in HTML element.
+-->
+
+<html>
+<head>
+</head>
+<body>
+
+</body>
+<script>
+	function no_of_words(x)
+	{
+		var st=x.trim().split(' ');
+		document.write("No of words is : " + st.length);
+	}
+	var y = prompt("Enter a string");	
+	no_of_words(y)
+</script>
+</html>

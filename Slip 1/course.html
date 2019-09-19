@@ -1,0 +1,18 @@
+        <div class="container">
+            <h2>Course Ingormation</h2>
+            <table ng-controller="courceController">
+                <tr style="background-color:aqua ">
+                        <td>ccode</td>
+                        <td>cname</td>
+                        <td>Credits</td>
+                </tr>
+                <tr ng-repeat="c in course">
+                    <td>{{c.ccode}}</td>
+                    <td>{{c.cname}}</td>
+                    <td>{{c.credit}}</td>
+                </tr>
+            </table>
+
+            <a href="#/subject"> Back</a>
+        </div>
+    

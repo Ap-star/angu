@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Armstrong No</title>
+    <script>
+        function armstrong() {
+            var len = 0;
+            var sum = 0;
+            var temp = 0;
+            var wr = "";
+            for (var i = 1; i <= parseInt(document.getElementById("num").value); i++) {
+                len = i.toString().length;
+                sum = 0;
+                temp = i;
+                while (temp != 0) {
+                    sum = sum + Math.pow(temp % 10, len);
+                    temp = Math.trunc(temp / 10);
+                }
+                if (i == sum) {
+                    wr = wr + "<br>" + sum.toString();
+                }
+            }
+            document.getElementById("arm").innerHTML = wr;
+        }
+    </script>
+</head>
+
+<body>
+    <input type="number" id="num" placeholder="Enter A number"> &nbsp;
+    <input type="submit" onclick="armstrong()">
+    <h2>Arm Strong No Are :</h2>
+    <h4 id="arm"></h4>
+</body>
+
+</html>

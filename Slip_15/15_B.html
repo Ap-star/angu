@@ -1,0 +1,47 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script>
+var app = angular.module('myApp', []);
+app.filter('RollFilter', function() 
+		{
+			return function(input)
+			{
+					return "MS-"+input;
+			}
+		});
+app.filter('AvgMarks', function() 
+		{
+			return function(input)
+			{
+				var c = 0;
+				for(i=0;i<input.length;i++){
+					 c=c+input[i];
+				}
+				return c/5;
+			}
+		});
+</script>
+</head>
+<body>
+	<div ng-app="myApp" ng-init="student=[{rno:43,sname:'levina',course:'mcs',marks:[89,78,87,90,99],bdate:'02/06/1997'},
+	{rno:26,sname:'Shivani',course:'mcs',marks:[98,76,54,57,87],bdate:'05/09/1998'},
+	{rno:29,sname:'arshit',course:'mcs',marks:[87,65,35,88,65],bdate:'04/03/1998'},
+	{rno:32,sname:'yash',course:'mcs',marks:[98,76,56,46,76],bdate:'02/11/1997'}]">
+		<table >
+			<tr>
+				<th>Roll No</th>
+				<th>Name</th>
+				<th>Marks</th>
+				<th>Bdate</th>
+			</tr>
+			<tr ng-repeat="s in student | orderBy : 'sname'">
+				<td>{{s.rno | RollFilter}}</td>
+				<td>{{s.sname | uppercase}}</td>
+				<td>{{s.marks | AvgMarks}}</td>
+				<td>{{s.bdate | date:"dd/mm/yyyy"}}</td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

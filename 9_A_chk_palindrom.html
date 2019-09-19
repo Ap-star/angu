@@ -1,0 +1,26 @@
+<html>
+<script >
+ function find()
+ {
+	var txt_str=document.getElementById("txt_str").value;
+	document.getElementById("data").value=txt_str;
+	txt_str.split(" ").forEach(function(item){
+		if (item==(item.split("").reverse().join("")))
+		{
+			var el=document.getElementById("palindroms")
+			el.innerHTML=el.innerHTML+"<li>"+item+"</li>";	 
+		}
+	});
+ }
+</script>
+<body>
+<div>
+Enter List Element:<input type="text" id="txt_str">
+<br>
+<button onclick="find()">Find</button><br>
+<p id="data"></p>
+<ul id="palindroms">
+</p>
+</div>
+</body>
+</html>

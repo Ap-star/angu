@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body ng-app="myApp">
+<div ng-controller="myCtrl">
+	<input ng-model="txt_str" type="text">
+	<button ng-click="findPalindrom()">palindrome!</button>
+	<p>{{ans}}</p>
+</div>
+
+<script>
+
+var app = angular.module("myApp",[]);
+app.factory('MyService', function() {
+	var factory = {};
+	factory.palindrome = function(txt_str) {
+		if (txt_str==txt_str.split("").reverse().join(""))
+			return 1
+		else
+			return 0
+	}
+	return factory
+});
+app.controller("myCtrl",function($scope,MyService) {
+	$scope.ans="";	
+	$scope.findPalindrom=function(){
+		var ans=MyService.palindrome($scope.txt_str);
+		if(ans==1){
+			$scope.ans="Palindrom";
+		}	
+		else{
+			$scope.ans="Not Palindrom";
+		}
+	}
+});
+</script>
+
+</body>
+</html>

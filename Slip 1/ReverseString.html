@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Reverse String</title>
+    <script>
+        function revsesestr() {
+            var s = document.getElementById("strinp").value;
+            var s1 = "";
+            if (s == "") {
+                alert("Enter String");
+            } else {
+                for (var i = s.length - 1; i >= 0; i--) {
+                    s1 = s1 + s[i];
+                }
+                document.getElementById("revs").innerHTML = "Revere String : " + s1;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <input type="text" id="strinp" placeholder="Enter a String"> &nbsp;
+    <button onclick="revsesestr()">Reverse!</button>
+    <h2 id="revs"></h2>
+</body>
+
+</html>

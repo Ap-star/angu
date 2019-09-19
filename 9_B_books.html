@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body ng-app="myApp">
+
+<table ng-controller="myCtrl" border="1">
+<tr ng-repeat="x in books  | filter:greaterThan('Price',300)">
+	<td>{{x.No}}</td>
+	<td>{{x.Name | capitalize }}</td>  
+	<td>{{x.Price}}</td>
+</tr>
+</table>
+
+<script>
+var app = angular.module("myApp", []);
+app.filter('capitalize', function() {
+return function(input) {
+  return (angular.isString(input) && input.length > 0) ? input.charAt(0).toUpperCase() + input.substr(1).toLowerCase() : input;
+}});
+app.controller("myCtrl", function($scope) {
+	$scope.books = [
+    {
+	  "No":1,
+      "Name" : "alfreds Futterkiste",
+      "Price" : 325
+    },
+    {
+      "No":2,
+      "Name" : "Berglunds snabbköp",
+      "Price" : 225
+    },
+    {
+	  "No":3,
+      "Name" : "centro comercial Moctezuma",
+      "Price" : 450
+    },
+    {
+	  "No":4,
+      "Name" : "Ernst Handel",
+      "Price" : 568
+    }
+	]
+	$scope.greaterThan = function(prop, val){
+		return function(item){
+			return item[prop] > val;
+		}
+	};
+});
+</script>
+
+</body>
+</html>

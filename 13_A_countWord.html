@@ -1,0 +1,18 @@
+<html>
+<script >
+function countWord(){
+	var no=document.getElementById("txt_val").value.trim();
+	var str1=no.split(" ");
+	document.getElementById("data").innerHTML=str1.length;	
+}
+</script>
+<body>
+<div>
+Enter List Element:<input type="text" id="txt_val">
+<br>
+<button onclick="countWord()">Count Word</button><br>
+<p id="data"></p>
+</div>
+</body>
+</html>
+</html>

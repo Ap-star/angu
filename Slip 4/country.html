@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>4A1</title>
+    <meta charset="utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js">
+    </script>
+    <script type="text/javascript" src="countryFilter.js"></script>
+</head>
+
+<body ng-app="myApp" ng-controller="first">
+        Using Custome filter Country details : 
+        <p country-Dtl></p>
+    Enter Currency : 
+    <input type="text" ng-model="pop">
+    <table border="1">
+        <tr ng-repeat="c in countries | filter : pop">
+            <td>{{c.name}}</td>
+            <td>{{c.population}}</td>
+            <!-- <td>{{c.flag}}</td> -->
+            <td><img  src={{c.flag}} height="100" width="100"/></td>
+            <td>{{c.capital | uppercase}}</td>
+            <td>{{c.curr | currency : "RS "}}</td>
+        </tr>
+        </table>
+
+        <br>
+        
+</body>
+</html>
